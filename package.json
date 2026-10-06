@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "chmod +x node_modules/.bin/vite && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -19,5 +19,6 @@
     "vite": "^5.4.0"
   },
   "allowScripts": {
-  "esbuild@0.21.5": true
+    "esbuild": true
+  }
 }

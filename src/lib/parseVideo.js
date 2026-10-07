@@ -10,12 +10,9 @@ export function parseVideo(url) {
 
   if (/youtube\.com|youtu\.be/.test(u)) {
     let id = null
-    let m = u.match(/[?&]v=([^&]+)/)
-    if (m) id = m[1]
-    m = u.match(/youtu\.be\/([^?]+)/)
-    if (m) id = m[1]
-    m = u.match(/shorts\/([^?]+)/)
-    if (m) id = m[1]
+    let m = u.match(/[?&]v=([^&]+)/); if (m) id = m[1]
+    m = u.match(/youtu\.be\/([^?]+)/); if (m) id = m[1]
+    m = u.match(/shorts\/([^?]+)/); if (m) id = m[1]
     if (id) return { platform: 'youtube', embed: `https://www.youtube.com/embed/${id}` }
     return { platform: 'youtube', embed: null }
   }
